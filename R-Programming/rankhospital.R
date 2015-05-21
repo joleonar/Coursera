@@ -24,11 +24,8 @@ rankhospital <- function(state, outcome, num = "best") {
         ## Setting rate column as numeric
         sub[,3] <- as.numeric(sub[,3])
         
-        ## Remove all NAs
-        sub <- sub[complete.cases(sub),]
-        
         ## Order first by Rate and second by Name
-        index <- with(sub, order(rate, hospital))
+        index <- with(sub, order(rate, hospital, na.last=NA))
         
         ## Check what num is
         if (is.numeric(num)) {
