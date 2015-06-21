@@ -13,24 +13,29 @@
 # Preparing the script variables #
 # ============================== #
 message("Preparing the script variables")
-message("---")
 
 list.of.packages <- c("data.table", "plyr")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
-if(length(new.packages)) install.packages(new.packages, quiet = TRUE)
+if(length(new.packages)) {
+        message("   - Installing required packages")
+        install.packages(new.packages, quiet = TRUE)
+}
 
-# Create and move to Project directory
+# Create and changeto to Project directory
+message("   - Create and changeto to Project directory")
 project_dir <- "~/Data Analysis/Coursera/Getting and Cleaning Data"
-dir.create("~/Data Analysis/Coursera/Getting and Cleaning Data", showWarnings = FALSE, recursive = TRUE)
-setwd("~/Data Analysis/Coursera/Getting and Cleaning Data")
+dir.create(project_dir, showWarnings = FALSE, recursive = TRUE)
+setwd(project_dir)
 
 # Setting variables for downloading and unzipping data
+message("   - Setting variables for downloading and unzipping data")
 fileUrl <- "http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 datadir <- "./data"
 org_dataset <- paste(datadir, "/org_dataset.zip", sep="")
 unzipped_dir <- paste(datadir, "/UCI HAR Dataset", sep="")
 
 # Check if data directory exists
+message("   - Check if data directory exists, if dataset is already downloaded and unzipped")
 if (!file.exists(datadir)) {
         dir.create(datadir)
 }
@@ -46,22 +51,23 @@ if (!file.exists(unzipped_dir)) {
         c <- unzip(org_dataset, exdir = datadir)
 }
 
-files <- list.files(unzipped_dir, recursive=TRUE)
-
 # ============================================== #
 # 0. Reading Activity, Subject and Feauture data #
 # ============================================== #
-message("0. Reading Activity, Subject and Feauture data")
+message("Reading Activity, Subject and Feauture data")
 
 # Read the activity files
+message("   - Read the activity files")
 act_train <- read.table(file.path(unzipped_dir, "train", "Y_train.txt"), header = FALSE)
 act_test  <- read.table(file.path(unzipped_dir, "test" , "Y_test.txt" ), header = FALSE)
 
 # Read the subject files
+message("   - Read the subject files")
 sub_train <- read.table(file.path(unzipped_dir, "train", "subject_train.txt"), header = FALSE)
 sub_test  <- read.table(file.path(unzipped_dir, "test" , "subject_test.txt"), header = FALSE)
 
 # Read the features files
+message("   - Read the features files")
 ft_train <- read.table(file.path(unzipped_dir, "train", "X_train.txt"), header = FALSE)
 ft_test  <- read.table(file.path(unzipped_dir, "test" , "X_test.txt" ), header = FALSE)
 ft_names <- read.table(file.path(unzipped_dir, "features.txt"), header = FALSE)
@@ -125,4 +131,4 @@ write.table(tidydata, file = "tidydata.txt", row.name=FALSE)
 
 # Show finish message
 message("---")
-message("Finished, you can found the tidy dataset into the project directory ", "\"", project_dir, "\"")
+message("Finished, you can found the tidy dataset in the project directory ", "\"", project_dir, "\"")
