@@ -1,10 +1,12 @@
-# Getting and Cleaning Data: Course Project
+# Getting and Cleaning Data: Course Project (Human Activity Recognition Using Smartphones Data Set)
 
 ## Requirements
 You need an internet connection for downloading the dataset and the missing packages.
 
-## The steps the script will do
+## About the Code Book
+The CodeBook.md file describes the variables, the data, and any transformations or work that you performed to clean up the data.
 
+## The steps the script will do
 Very simple.... The script will do everything for you. :) It will
 
 - install the required packages if needed;
