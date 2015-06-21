@@ -1,4 +1,5 @@
-# Getting and Cleaning Data: Course Project (Human Activity Recognition Using Smartphones Data Set)
+# Getting and Cleaning Data: Course Project 
+##### (Human Activity Recognition Using Smartphones Data Set)
 
 ## Requirements
 You need an internet connection for downloading the dataset and the missing packages.
