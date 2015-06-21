@@ -27,7 +27,7 @@ After running, you will see the following output as the script works:
 
 	Preparing the script variables
 	   - Installing required packages
-	   - Create and changeto to project directory
+	   - Create and change to project directory
 	   - Setting variables for downloading and unzipping data
 	   - Check if data directory exists, if dataset is already downloaded and unzipped
 	Reading Activity, Subject and Feauture data
