@@ -21,8 +21,12 @@ if(length(new.packages)) {
         install.packages(new.packages, quiet = TRUE)
 }
 
+<<<<<<< HEAD
 # Create and changeto to Project directory
 message("   - Create and changeto to Project directory")
+=======
+# Create and change to project directory
+>>>>>>> origin/master
 project_dir <- "~/Data Analysis/Coursera/Getting and Cleaning Data"
 dir.create(project_dir, showWarnings = FALSE, recursive = TRUE)
 setwd(project_dir)

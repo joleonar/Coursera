@@ -1,4 +1,4 @@
-# Getting and Cleaning Data : Course Project
+# Getting and Cleaning Data: Course Project
 
 ## Requirements
 You need an internet connection for downloading the dataset and the missing packages.
