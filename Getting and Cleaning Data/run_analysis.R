@@ -19,10 +19,10 @@ list.of.packages <- c("data.table", "plyr")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages, quiet = TRUE)
 
-# Create and move to Project directory
+# Create and change to project directory
 project_dir <- "~/Data Analysis/Coursera/Getting and Cleaning Data"
-dir.create("~/Data Analysis/Coursera/Getting and Cleaning Data", showWarnings = FALSE, recursive = TRUE)
-setwd("~/Data Analysis/Coursera/Getting and Cleaning Data")
+dir.create(project_dir, showWarnings = FALSE, recursive = TRUE)
+setwd(project_dir)
 
 # Setting variables for downloading and unzipping data
 fileUrl <- "http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
