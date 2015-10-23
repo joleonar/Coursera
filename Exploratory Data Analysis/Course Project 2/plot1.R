@@ -17,8 +17,7 @@
 NEI <- readRDS("summarySCC_PM25.rds")
 SCC <- readRDS("Source_Classification_Code.rds")
 
-# First we'll aggregate the total PM2.5 emission from all sources for each of the 
-# years 1999, 2002, 2005, and 2008
+# Aggregate the total PM2.5 emissions 
 agg <- aggregate(Emissions ~ year, NEI, sum)
 
 # Setting output to png file
@@ -26,10 +25,10 @@ png('plot1.png')
 
 # Creating a barplot to see if total emissions have decreased in the US from 1999 to 2008.
 barplot(
-    agg$Emissions/100,
+    agg$Emissions/10^6,
     names.arg = agg$year,
     xlab = "Year",
-    ylab = expression("PM"[2.5]*" Emissions (x 100)"),
+    ylab = expression("PM"[2.5]*" Emissions (10^6 Tons)"),
     main = expression("Total PM"[2.5]* " Emissions in the United States"),
     col = "lightblue"
 )
