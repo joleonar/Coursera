@@ -1,4 +1,6 @@
 # Reproducible Research: Peer Assessment 1
+Oct 12, 2015
+
 John Letteboer
 
 ## Loading and preprocessing the data
