@@ -180,9 +180,6 @@ As we can see the most damage terms of fatalities and injuries is `Tornado`.
 Let's plot the data we created for question 2 into a barplot.
 
 ```{r}
-# disable scientific notation 
-##options(scipen=999)
-
 par(mfrow=c(1,2), cex = 0.7, mar=c(12,5,4,2), las = 2)
 barplot(
     prop_dam_ord$PROP_DAMAGE/10^9,
